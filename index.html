@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>必应搜索 - 苹果风格</title>
+    <style>
+        :root {
+            --apple-bg: #f5f5f7;
+            --apple-text: #1d1d1f;
+            --apple-blue: #0071e3;
+            --apple-gray: #86868b;
+            --apple-light-gray: #d2d2d7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--apple-bg);
+            color: var(--apple-text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-weight: 600;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--apple-blue);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--apple-text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--apple-blue);
+        }
+        
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .search-box-container {
+            width: 100%;
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--apple-gray);
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+            outline: none;
+            border: 1px solid var(--apple-light-gray);
+        }
+        
+        .search-box:focus {
+            box-shadow: 0 4px 20px rgba(0, 113, 227, 0.15);
+            border-color: var(--apple-blue);
+        }
+        
+        .search-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .search-button {
+            padding: 10px 25px;
+            background-color: white;
+            border: 1px solid var(--apple-light-gray);
+            border-radius: 12px;
+            color: var(--apple-text);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-button:hover {
+            background-color: #f5f5f7;
+        }
+        
+        .primary-button {
+            background-color: var(--apple-blue);
+            color: white;
+            border: none;
+        }
+        
+        .primary-button:hover {
+            background-color: #0077ed;
+        }
+        
+        footer {
+            width: 100%;
+            margin-top: auto;
+            padding: 30px;
+            text-align: center;
+            color: var(--apple-gray);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .search-box {
+                font-size: 16px;
+                padding: 14px 20px 14px 45px;
+            }
+            
+            .search-icon {
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">必<span>应</span></div>
+        <div class="nav-links">
+            <a href="#">图片</a>
+            <a href="#">视频</a>
+            <a href="#">地图</a>
+            <a href="#">登录</a>
+        </div>
+    </nav>
+    
+    <div class="search-container">
+        <form action="https://www.bing.com/search" method="GET">
+            <div class="search-box-container">
+                <div class="search-icon">🔍</div>
+                <input class="search-box" type="text" name="q" placeholder="搜索网页" autocomplete="off">
+            </div>
+            <div class="search-buttons">
+                <button class="search-button primary-button" type="submit">搜索</button>
+                <button class="search-button" type="button">手气不错</button>
+            </div>
+        </form>
+    </div>
+    
+    <footer>
+        <p>© 2023 必应搜索 - 苹果风格界面</p>
+    </footer>
+</body>
+</html>
